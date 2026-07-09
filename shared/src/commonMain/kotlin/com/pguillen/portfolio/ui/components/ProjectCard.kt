@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.pguillen.portfolio.model.AppLanguage
 import com.pguillen.portfolio.data.PortfolioStrings
-import com.pguillen.portfolio.ui.proyects.Project
+import com.pguillen.portfolio.ui.projects.Project
 import com.pguillen.portfolio.ui.theme.PortfolioTheme
 
 @Composable
@@ -37,7 +37,6 @@ fun ProjectCard(
 	featured: Boolean,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
-	onReadmeClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	if (featured) {
@@ -47,7 +46,6 @@ fun ProjectCard(
 			strings = strings,
 			onDemoClick = onDemoClick,
 			onGithubClick = onGithubClick,
-			onReadmeClick = onReadmeClick,
 			modifier = modifier
 		)
 	}
@@ -58,7 +56,6 @@ fun ProjectCard(
 			strings = strings,
 			onDemoClick = onDemoClick,
 			onGithubClick = onGithubClick,
-			onReadmeClick = onReadmeClick,
 			modifier = modifier
 		)
 	}
@@ -72,7 +69,6 @@ private fun FeaturedProjectCard(
 	strings: PortfolioStrings,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
-	onReadmeClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Row(
@@ -130,12 +126,11 @@ private fun FeaturedProjectCard(
 
 			ProjectActions(
 				strings = strings,
-				hasDemo = project.demoUrl != null,
-				hasGithub = project.githubUrl != null,
-				hasReadme = project.readmeUrl != null,
+				hasDemo = true,
+				hasGithub = true,
+				hasReadme = true,
 				onDemoClick = onDemoClick,
-				onGithubClick = onGithubClick,
-				onReadmeClick = onReadmeClick
+				onGithubClick = onGithubClick
 			)
 		}
 	}
@@ -149,7 +144,6 @@ private fun CompactProjectCard(
 	strings: PortfolioStrings,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
-	onReadmeClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Column(
@@ -193,12 +187,11 @@ private fun CompactProjectCard(
 
 		ProjectActions(
 			strings = strings,
-			hasDemo = project.demoUrl != null,
-			hasGithub = project.githubUrl != null,
-			hasReadme = project.readmeUrl != null,
+			hasDemo = true,
+			hasGithub = true,
+			hasReadme = true,
 			onDemoClick = onDemoClick,
-			onGithubClick = onGithubClick,
-			onReadmeClick = onReadmeClick
+			onGithubClick = onGithubClick
 		)
 	}
 }
@@ -267,7 +260,6 @@ private fun ProjectActions(
 	hasReadme: Boolean,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
-	onReadmeClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Row(
@@ -285,13 +277,6 @@ private fun ProjectActions(
 			ProjectSecondaryButton(
 				text = strings.github,
 				onClick = onGithubClick
-			)
-		}
-
-		if (hasReadme) {
-			ProjectSecondaryButton(
-				text = strings.readme,
-				onClick = onReadmeClick
 			)
 		}
 	}

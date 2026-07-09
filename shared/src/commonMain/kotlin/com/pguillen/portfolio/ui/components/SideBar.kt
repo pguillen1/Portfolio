@@ -16,6 +16,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItemDefaults.contentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -27,7 +29,10 @@ import androidx.compose.ui.unit.dp
 import com.pguillen.portfolio.model.PortfolioSection
 import com.pguillen.portfolio.model.label
 import com.pguillen.portfolio.data.PortfolioStrings
+import com.pguillen.portfolio.model.icon
 import com.pguillen.portfolio.ui.theme.PortfolioTheme
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.vectorResource
 
 @Composable
 fun Sidebar(
@@ -59,6 +64,7 @@ fun Sidebar(
 			PortfolioSection.entries.forEach { section ->
 				SidebarItem(
 					text = section.label(strings),
+					icon = section.icon,
 					selected = selectedSection == section,
 					onClick = { onSectionSelected(section) }
 				)
@@ -123,6 +129,7 @@ private fun SidebarProfile(
 @Composable
 private fun SidebarItem(
 	text: String,
+	icon: DrawableResource,
 	selected: Boolean,
 	onClick: () -> Unit,
 	modifier: Modifier = Modifier
@@ -165,6 +172,13 @@ private fun SidebarItem(
 					if (selected) PortfolioTheme.colors.accent
 					else Color.Transparent
 				)
+		)
+
+		Icon(
+			imageVector = vectorResource(icon),
+			contentDescription = null,
+			tint = contentColor,
+			modifier = Modifier.size(20.dp)
 		)
 
 		Spacer(modifier = Modifier.width(16.dp))

@@ -1,7 +1,7 @@
 package com.pguillen.portfolio.data
 
 import com.pguillen.portfolio.ui.components.LocalizedText
-import com.pguillen.portfolio.ui.proyects.Project
+import com.pguillen.portfolio.ui.projects.Project
 
 val portfolioProjects = listOf(
 	Project(
@@ -36,9 +36,8 @@ val portfolioProjects = listOf(
 				es = "Demo web desplegada con GitHub Pages"
 			)
 		),
-		demoUrl = "https://...",
-		githubUrl = "https://...",
-		readmeUrl = "https://...",
+		demoUrl = "https://pguillen1.github.io/ReadingTrackerKMP/",
+		githubUrl = "https://github.com/pguillen1/ReadingTrackerKMP",
 		featured = true
 	)
 )

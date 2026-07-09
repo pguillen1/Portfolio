@@ -1,4 +1,4 @@
-package com.pguillen.portfolio.ui.proyects
+package com.pguillen.portfolio.ui.projects
 
 import com.pguillen.portfolio.ui.components.LocalizedText
 
@@ -10,6 +10,5 @@ data class Project(
 	val highlights: List<LocalizedText>,
 	val demoUrl: String,
 	val githubUrl: String,
-	val readmeUrl: String,
 	val featured: Boolean
 )
