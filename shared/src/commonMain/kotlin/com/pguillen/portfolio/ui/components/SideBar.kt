@@ -164,21 +164,23 @@ private fun SidebarItem(
 			.clickable(onClick = onClick),
 		verticalAlignment = Alignment.CenterVertically
 	) {
-		Box(
-			modifier = Modifier
-				.width(4.dp)
-				.fillMaxHeight()
-				.background(
-					if (selected) PortfolioTheme.colors.accent
-					else Color.Transparent
-				)
-		)
+//		Box(
+//			modifier = Modifier
+//				.width(4.dp)
+//				.fillMaxHeight()
+//				.background(
+//					if (selected) PortfolioTheme.colors.accent
+//					else Color.Transparent
+//				)
+//		)
 
 		Icon(
 			imageVector = vectorResource(icon),
 			contentDescription = null,
 			tint = contentColor,
-			modifier = Modifier.size(20.dp)
+			modifier = Modifier
+				.padding(start = 20.dp)
+				.size(20.dp)
 		)
 
 		Spacer(modifier = Modifier.width(16.dp))
