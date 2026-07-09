@@ -76,9 +76,7 @@ fun PortfolioApp() {
 					language = language,
 					isDarkTheme = isDarkTheme,
 					onLanguageChange = { language = it },
-					onThemeClick = {
-						isDarkTheme = !isDarkTheme
-					}
+					onThemeClick = { isDarkTheme = it }
 				)
 				MainContent(
 					selectedSection = selectedSection,

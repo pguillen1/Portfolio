@@ -40,8 +40,8 @@ class PortfolioStrings(
 
 	val greeting: String
 		get() = when (language) {
-			AppLanguage.EN -> "Hi, I'm Pedro 👋"
-			AppLanguage.ES -> "Hola, soy Pedro 👋"
+			AppLanguage.EN -> "Pedro Guillén · Android Developer"
+			AppLanguage.ES -> "Pedro Guillén · Desarrollador Android"
 		}
 
 	val heroTitle: String

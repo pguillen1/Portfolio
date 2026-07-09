@@ -24,7 +24,7 @@ fun PortfolioTopBar(
 	language: AppLanguage,
 	isDarkTheme: Boolean,
 	onLanguageChange: (AppLanguage) -> Unit,
-	onThemeClick: () -> Unit,
+	onThemeClick: (Boolean) -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Row(
@@ -58,7 +58,7 @@ fun PortfolioTopBar(
 
 		ThemeToggle(
 			isDarkTheme = isDarkTheme,
-			onClick = onThemeClick
+			onThemeSelected = onThemeClick
 		)
 	}
 }

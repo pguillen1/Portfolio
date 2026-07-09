@@ -236,7 +236,7 @@ private fun SidebarFooter(
 		Spacer(modifier = Modifier.height(4.dp))
 
 		Text(
-			text = "Built with Kotlin ☕",
+			text = "Built with Kotlin",
 			style = PortfolioTheme.typography.label,
 			color = PortfolioTheme.colors.textSecondary
 		)
