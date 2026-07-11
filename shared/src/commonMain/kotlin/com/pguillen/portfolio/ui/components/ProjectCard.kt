@@ -1,6 +1,7 @@
 package com.pguillen.portfolio.ui.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -12,7 +13,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -24,10 +24,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.pguillen.portfolio.model.AppLanguage
 import com.pguillen.portfolio.data.PortfolioStrings
-import com.pguillen.portfolio.ui.projects.Project
+import com.pguillen.portfolio.model.AppLanguage
+import com.pguillen.portfolio.model.Project
 import com.pguillen.portfolio.ui.theme.PortfolioTheme
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun ProjectCard(
@@ -90,7 +92,8 @@ private fun FeaturedProjectCard(
 			title = project.title,
 			modifier = Modifier
 				.weight(0.9f)
-				.height(300.dp)
+				.height(300.dp),
+			previewImages = project.previewImages
 		)
 
 		Column(
@@ -128,7 +131,6 @@ private fun FeaturedProjectCard(
 				strings = strings,
 				hasDemo = true,
 				hasGithub = true,
-				hasReadme = true,
 				onDemoClick = onDemoClick,
 				onGithubClick = onGithubClick
 			)
@@ -189,7 +191,6 @@ private fun CompactProjectCard(
 			strings = strings,
 			hasDemo = true,
 			hasGithub = true,
-			hasReadme = true,
 			onDemoClick = onDemoClick,
 			onGithubClick = onGithubClick
 		)
@@ -257,7 +258,6 @@ private fun ProjectActions(
 	strings: PortfolioStrings,
 	hasDemo: Boolean,
 	hasGithub: Boolean,
-	hasReadme: Boolean,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
 	modifier: Modifier = Modifier
@@ -333,6 +333,7 @@ private fun ProjectSecondaryButton(
 @Composable
 private fun ProjectPreviewPlaceholder(
 	title: String,
+	previewImages: List<DrawableResource>? = null,
 	modifier: Modifier = Modifier
 ) {
 	Box(
@@ -353,20 +354,34 @@ private fun ProjectPreviewPlaceholder(
 			verticalArrangement = Arrangement.spacedBy(12.dp),
 			horizontalAlignment = Alignment.CenterHorizontally
 		) {
-			Box(
-				modifier = Modifier
-					.width(120.dp)
-					.height(220.dp)
-					.background(
-						color = PortfolioTheme.colors.surface,
-						shape = RoundedCornerShape(24.dp)
+//			Box(
+//				modifier = Modifier
+//					.width(120.dp)
+//					.height(220.dp)
+//					.background(
+//						color = PortfolioTheme.colors.surface,
+//						shape = RoundedCornerShape(24.dp)
+//					)
+//					.border(
+//						width = 1.dp,
+//						color = PortfolioTheme.colors.border,
+//						shape = RoundedCornerShape(24.dp)
+//					),
+//				contentAlignment = Alignment.Center
+//			) {
+			Row(
+				modifier = Modifier.fillMaxWidth(),
+				verticalAlignment = Alignment.CenterVertically,
+				horizontalArrangement = Arrangement.SpaceEvenly
+			) {
+				previewImages?.forEach { image ->
+					Image(
+						painter = painterResource(image),
+						contentDescription = null
 					)
-					.border(
-						width = 1.dp,
-						color = PortfolioTheme.colors.border,
-						shape = RoundedCornerShape(24.dp)
-					)
-			)
+				}
+			}
+//			}
 
 			Text(
 				text = title,

@@ -1,7 +1,11 @@
 package com.pguillen.portfolio.data
 
+import com.pguillen.portfolio.model.Project
 import com.pguillen.portfolio.ui.components.LocalizedText
-import com.pguillen.portfolio.ui.projects.Project
+import portfolio.shared.generated.resources.Res
+import portfolio.shared.generated.resources.library
+import portfolio.shared.generated.resources.settings
+import portfolio.shared.generated.resources.stats
 
 val portfolioProjects = listOf(
 	Project(
@@ -38,6 +42,7 @@ val portfolioProjects = listOf(
 		),
 		demoUrl = "https://pguillen1.github.io/ReadingTrackerKMP/",
 		githubUrl = "https://github.com/pguillen1/ReadingTrackerKMP",
-		featured = true
+		featured = true,
+		previewImages = listOf(Res.drawable.library, Res.drawable.stats, Res.drawable.settings)
 	)
 )

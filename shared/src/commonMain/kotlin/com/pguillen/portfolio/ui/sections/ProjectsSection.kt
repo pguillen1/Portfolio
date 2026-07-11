@@ -16,7 +16,7 @@ import com.pguillen.portfolio.data.portfolioProjects
 import com.pguillen.portfolio.ui.components.ProjectCard
 import com.pguillen.portfolio.ui.components.SectionHeader
 import com.pguillen.portfolio.ui.components.SectionLabel
-import com.pguillen.portfolio.ui.projects.Project
+import com.pguillen.portfolio.model.Project
 
 @Composable
 fun ProjectsSection(
@@ -75,10 +75,10 @@ fun ProjectsSection(
 						strings = strings,
 						featured = false,
 						onDemoClick = {
-							project.demoUrl?.let(uriHandler::openUri)
+							project.demoUrl.let(uriHandler::openUri)
 						},
 						onGithubClick = {
-							project.githubUrl?.let(uriHandler::openUri)
+							project.githubUrl.let(uriHandler::openUri)
 						},
 						modifier = Modifier.fillMaxWidth()
 					)
