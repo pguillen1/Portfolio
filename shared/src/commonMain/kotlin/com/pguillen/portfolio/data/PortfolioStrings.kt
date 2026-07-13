@@ -5,6 +5,14 @@ import com.pguillen.portfolio.model.AppLanguage
 class PortfolioStrings(
 	private val language: AppLanguage
 ) {
+	val email: String = "pedro.guillen55@gmail.com"
+
+	val githubUrl = "https://github.com/pguillen1"
+
+	val linkedInUrl = "https://www.linkedin.com/in/pedro-guill%C3%A9n-escobar-a129b915a/"
+
+	val cvUrl = "/cv/pedro-guillen-cv.pdf"
+
 	val home: String
 		get() = when (language) {
 			AppLanguage.EN -> "Home"

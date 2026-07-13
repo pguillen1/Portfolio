@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pguillen.portfolio.data.PortfolioStrings
@@ -45,6 +46,8 @@ fun PortfolioApp() {
 		PortfolioStrings(language)
 	}
 
+	val uriHandler = LocalUriHandler.current
+
 	PortfolioThemeProvider(
 		darkTheme = isDarkTheme
 	) {
@@ -61,13 +64,13 @@ fun PortfolioApp() {
 					.width(260.dp)
 					.fillMaxHeight(),
 				onGithubClick = {
-					// TODO open GitHub
+					uriHandler.openUri(strings.githubUrl)
 				},
 				onLinkedInClick = {
-					// TODO open LinkedIn
+					uriHandler.openUri(strings.linkedInUrl)
 				},
 				onEmailClick = {
-					// TODO open email
+					uriHandler.openUri("mailto:${strings.email}")
 				}
 			)
 			Column {

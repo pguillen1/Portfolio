@@ -37,11 +37,6 @@ fun ContactSection(
 ) {
 	val uriHandler = LocalUriHandler.current
 
-	val email = "pedro.guillen55@gmail.com"
-	val githubUrl = "https://github.com/TU_USUARIO"
-	val linkedInUrl = "https://www.linkedin.com/in/TU_USUARIO"
-	val cvUrl = "/cv/pedro-guillen-cv.pdf"
-
 	Column(
 		modifier = modifier
 			.verticalScroll(rememberScrollState())
@@ -55,18 +50,18 @@ fun ContactSection(
 
 		ContactIntroCard(
 			strings = strings,
-			email = email,
+			email = strings.email,
 			onEmailClick = {
-				uriHandler.openUri("mailto:$email")
+				uriHandler.openUri("mailto:${strings.email}")
 			},
 			onGithubClick = {
-				uriHandler.openUri(githubUrl)
+				uriHandler.openUri(strings.githubUrl)
 			},
 			onLinkedInClick = {
-				uriHandler.openUri(linkedInUrl)
+				uriHandler.openUri(strings.linkedInUrl)
 			},
 			onCvClick = {
-				uriHandler.openUri(cvUrl)
+				uriHandler.openUri(strings.cvUrl)
 			}
 		)
 
