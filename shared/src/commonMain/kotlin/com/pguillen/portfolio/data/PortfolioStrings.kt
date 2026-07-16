@@ -285,4 +285,10 @@ class PortfolioStrings(
 			AppLanguage.EN -> "Roles I am interested in"
 			AppLanguage.ES -> "Roles que me interesan"
 		}
+
+	val privacyPolicy: String
+		get() = when (language) {
+			AppLanguage.EN -> "Privacy Policy"
+			AppLanguage.ES -> "Política de privacidad"
+		}
 }

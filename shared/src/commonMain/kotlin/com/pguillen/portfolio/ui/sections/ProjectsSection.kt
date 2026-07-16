@@ -57,6 +57,9 @@ fun ProjectsSection(
 					},
 					onGithubClick = {
 						project.githubUrl.let(uriHandler::openUri)
+					},
+					onPolicyClick = {
+
 					}
 				)
 			}
@@ -79,6 +82,9 @@ fun ProjectsSection(
 						},
 						onGithubClick = {
 							project.githubUrl.let(uriHandler::openUri)
+						},
+						onPolicyClick = {
+
 						},
 						modifier = Modifier.fillMaxWidth()
 					)

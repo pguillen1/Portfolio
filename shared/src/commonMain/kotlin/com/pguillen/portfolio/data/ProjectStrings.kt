@@ -42,6 +42,7 @@ val portfolioProjects = listOf(
 		),
 		demoUrl = "https://pguillen1.github.io/ReadingTrackerKMP/",
 		githubUrl = "https://github.com/pguillen1/ReadingTrackerKMP",
+		policyUrl = "test",
 		featured = true,
 		previewImages = listOf(Res.drawable.library, Res.drawable.stats, Res.drawable.settings)
 	)

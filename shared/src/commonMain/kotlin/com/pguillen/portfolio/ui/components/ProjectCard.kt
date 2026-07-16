@@ -39,6 +39,7 @@ fun ProjectCard(
 	featured: Boolean,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
+	onPolicyClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	if (featured) {
@@ -48,6 +49,7 @@ fun ProjectCard(
 			strings = strings,
 			onDemoClick = onDemoClick,
 			onGithubClick = onGithubClick,
+			onPolicyClick = onPolicyClick,
 			modifier = modifier
 		)
 	}
@@ -58,6 +60,7 @@ fun ProjectCard(
 			strings = strings,
 			onDemoClick = onDemoClick,
 			onGithubClick = onGithubClick,
+			onPolicyClick = onPolicyClick,
 			modifier = modifier
 		)
 	}
@@ -71,6 +74,7 @@ private fun FeaturedProjectCard(
 	strings: PortfolioStrings,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
+	onPolicyClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Row(
@@ -129,10 +133,12 @@ private fun FeaturedProjectCard(
 
 			ProjectActions(
 				strings = strings,
-				hasDemo = true,
-				hasGithub = true,
+				hasDemo = project.demoUrl.isNotEmpty(),
+				hasGithub = project.githubUrl.isNotEmpty(),
+				hasPolicy = project.policyUrl.isNotEmpty(),
 				onDemoClick = onDemoClick,
-				onGithubClick = onGithubClick
+				onGithubClick = onGithubClick,
+				onPolicyClick = onPolicyClick
 			)
 		}
 	}
@@ -146,6 +152,7 @@ private fun CompactProjectCard(
 	strings: PortfolioStrings,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
+	onPolicyClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Column(
@@ -189,10 +196,12 @@ private fun CompactProjectCard(
 
 		ProjectActions(
 			strings = strings,
-			hasDemo = true,
-			hasGithub = true,
+			hasDemo = project.demoUrl.isNotEmpty(),
+			hasGithub = project.githubUrl.isNotEmpty(),
+			hasPolicy = project.policyUrl.isNotEmpty(),
 			onDemoClick = onDemoClick,
-			onGithubClick = onGithubClick
+			onGithubClick = onGithubClick,
+			onPolicyClick = onPolicyClick
 		)
 	}
 }
@@ -258,8 +267,10 @@ private fun ProjectActions(
 	strings: PortfolioStrings,
 	hasDemo: Boolean,
 	hasGithub: Boolean,
+	hasPolicy: Boolean,
 	onDemoClick: () -> Unit,
 	onGithubClick: () -> Unit,
+	onPolicyClick: () -> Unit,
 	modifier: Modifier = Modifier
 ) {
 	Row(
@@ -277,6 +288,13 @@ private fun ProjectActions(
 			ProjectSecondaryButton(
 				text = strings.github,
 				onClick = onGithubClick
+			)
+		}
+
+		if (hasPolicy) {
+			ProjectSecondaryButton(
+				text = strings.privacyPolicy,
+				onClick = onPolicyClick
 			)
 		}
 	}

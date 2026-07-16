@@ -11,6 +11,7 @@ data class Project(
 	val highlights: List<LocalizedText>,
 	val demoUrl: String,
 	val githubUrl: String,
+	val policyUrl: String,
 	val featured: Boolean,
 	val previewImages: List<DrawableResource>? = null
 )
