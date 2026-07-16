@@ -1,35 +1,61 @@
-This is a Kotlin Multiplatform project targeting Web.
+# Pedro Guillén Portfolio
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Personal portfolio website built with **Kotlin Multiplatform** and **Compose Multiplatform Web**.
 
-### Running the apps
+This project is a simple portfolio dashboard where I showcase my Android/Kotlin projects, technical stack, experience, and contact information.
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+The main goal of this repository is to provide a public website for my developer profile and link to my Android/KMP portfolio apps.
 
-- Web app:
-  - Wasm target (faster, modern browsers): `./gradlew :webApp:wasmJsBrowserDevelopmentRun`
-  - JS target (slower, supports older browsers): `./gradlew :webApp:jsBrowserDevelopmentRun`
+## About
 
-### Running tests
+I am focused on Android development using:
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+* Kotlin
+* Jetpack Compose
+* Kotlin Multiplatform
+* Compose Multiplatform
+* Clean Architecture
+* Coroutines / Flow
+* Local-first persistence
+* Testing
 
-- Web tests:
-  - Wasm target: `./gradlew :shared:wasmJsTest`
-  - JS target: `./gradlew :shared:jsTest`
+The portfolio includes sections for:
 
----
+* Home
+* Projects
+* Stack
+* Experience
+* Contact
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+It also supports:
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+* Light and dark theme
+* English and Spanish language toggle
+* GitHub Pages deployment
+
+## Tech Stack
+
+* Kotlin
+* Compose Multiplatform
+* Kotlin/Wasm
+* Material 3
+* Gradle
+* GitHub Actions
+* GitHub Pages
+
+## Deployment
+
+The portfolio is deployed using **GitHub Pages** through **GitHub Actions**.
+
+Every push to the main branch builds the Wasm web distribution and publishes it to GitHub Pages.
+
+## Links
+
+* Portfolio: **https://pguillen1.github.io/Portfolio**
+* GitHub: **https://github.com/pguillen1**
+* LinkedIn: **https://www.linkedin.com/in/pedro-guill%C3%A9n-escobar-a129b915a/**
+
+## Status
+
+This portfolio is currently a work in progress.
+I am using it to present my Android/Kotlin projects while continuing to improve the design, content, responsiveness, and project screenshots.
