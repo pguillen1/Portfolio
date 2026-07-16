@@ -11,7 +11,11 @@ class PortfolioStrings(
 
 	val linkedInUrl = "https://www.linkedin.com/in/pedro-guill%C3%A9n-escobar-a129b915a/"
 
-	val cvUrl = "/cv/pedro-guillen-cv.pdf"
+	val cvUrl: String
+		get() = when (language) {
+			AppLanguage.EN -> "/cv/pedro-guillen-cv-english.pdf"
+			AppLanguage.ES -> "/cv/pedro-guillen-cv-spanish.pdf"
+		}
 
 	val home: String
 		get() = when (language) {
