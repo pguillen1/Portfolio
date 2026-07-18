@@ -1,5 +1,6 @@
 package com.pguillen.portfolio.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -24,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.pguillen.portfolio.model.PortfolioSection
@@ -32,7 +34,10 @@ import com.pguillen.portfolio.data.PortfolioStrings
 import com.pguillen.portfolio.model.icon
 import com.pguillen.portfolio.ui.theme.PortfolioTheme
 import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.vectorResource
+import portfolio.shared.generated.resources.Res
+import portfolio.shared.generated.resources.profile_picture
 
 @Composable
 fun Sidebar(
@@ -91,7 +96,7 @@ private fun SidebarProfile(
 	) {
 		Box(
 			modifier = Modifier
-				.size(88.dp)
+				.size(120.dp)
 				.clip(CircleShape)
 				.background(PortfolioTheme.colors.accentSoft)
 				.border(
@@ -101,11 +106,16 @@ private fun SidebarProfile(
 				),
 			contentAlignment = Alignment.Center
 		) {
-			Text(
-				text = "PG",
-				style = PortfolioTheme.typography.sectionTitle,
-				color = PortfolioTheme.colors.accent
+			Image(
+				painter = painterResource(Res.drawable.profile_picture),
+				contentDescription = null,
+				contentScale = ContentScale.FillWidth
 			)
+//			Text(
+//				text = "PG",
+//				style = PortfolioTheme.typography.sectionTitle,
+//				color = PortfolioTheme.colors.accent
+//			)
 		}
 
 		Spacer(modifier = Modifier.height(16.dp))
