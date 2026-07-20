@@ -13,8 +13,8 @@ class PortfolioStrings(
 
 	val cvUrl: String
 		get() = when (language) {
-			AppLanguage.EN -> "/Portfolio/cv/pedro-guillen-cv-english.pdf"
-			AppLanguage.ES -> "/Portfolio/cv/pedro-guillen-cv-spanish.pdf"
+			AppLanguage.EN -> "cv/pedro-guillen-cv-english.pdf"
+			AppLanguage.ES -> "cv/pedro-guillen-cv-spanish.pdf"
 		}
 
 	val home: String
